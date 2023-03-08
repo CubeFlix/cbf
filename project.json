@@ -1,0 +1,54 @@
+{
+    "name": "cbf",
+    "path": "",
+    "description": "A dynamic and extensible file format specification designed for large binary files.",
+    "author": "cubeflix",
+    "license": "MIT",
+    "packages": [
+        {
+            "name": "specifications",
+            "path": "",
+            "contents": [
+                "SPECIFICATIONS.pdf"
+            ],
+            "output_formats": ["tar-gz", "zip"],
+            "description": "CBF specifications",
+            "version": "1.0.0",
+            "author": "cubeflix"
+        },
+        {
+            "name": "cbf-py",
+            "path": "",
+            "contents": [
+                "cbf.py",
+                "archive.py",
+                "README.md"
+            ],
+            "output_formats": ["tar-gz", "zip"],
+            "description": "CBF implementation library and archival utility (Python)",
+            "version": "1.0.0",
+            "author": "cubeflix"
+        },
+        {
+            "name": "cbf-archive-windows",
+            "path": "",
+            "contents": [
+                "cbf.py",
+                "archive.py",
+                "README.md"
+            ],
+            "pre_package": [
+                "pyinstaller archive.py --onefile",
+                "powershell -Command cp dist/archive.exe cbf-archive.exe"
+            ],
+            "package_items": [
+                "cbf-archive.exe",
+                "README.md"
+            ],
+            "output_formats": ["tar-gz", "zip"],
+            "description": "CBF archival utility Windows distribution",
+            "version": "1.0.0",
+            "author": "cubeflix"
+        }
+    ]
+}
